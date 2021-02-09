@@ -3,6 +3,7 @@ import os
 import json
 import random
 import requests
+from dotenv import load_dotenv
 
 client = discord.Client()
 
@@ -33,4 +34,6 @@ async def on_message(message):
         await message.author.send(file=discord.File('file.jpg'))
         await message.channel.send(quote)
 
-client.run('ODA1NzE2MTY0NjQxNjg1NTY5.YBe7pw.sdbowvfu3fvhAzlGB_4u0vDMXJU ')
+load_dotenv()
+
+client.run(os.getenv('TOKEN'))
